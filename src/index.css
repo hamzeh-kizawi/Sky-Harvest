@@ -4,3 +4,44 @@ body {
   background-color: #ffffff;
   font-family: sans-serif;
 }
+:root {
+  /* Palette Option 3: Stormy Horizon + Logo Colors */
+  --color-primary: #005f73; /* Teal from logo */
+  --color-secondary: #ae2012; /* Rust for 'dust' and accents */
+  --color-tertiary: #e9d8a6; /* Cloud White for highlights */
+  --color-dark-bg: #0a192f; /* Deep midnight blue for backgrounds */
+  --color-text-light: #f1faee; /* Off-white for text */
+  --color-text-dark: #0a192f; /* Dark for text on light backgrounds */
+  --gradient-primary: linear-gradient(90deg, var(--color-primary) 0%, var(--color-dark-bg) 100%);
+
+  /* Navbar properties */
+  --navbar-height: 80px;
+}
+
+/* Basic Reset to ensure consistent styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--color-dark-bg);
+  color: var(--color-text-light);
+  overflow-x: hidden; /* Prevent horizontal scrollbar */
+}
+
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}

@@ -1,0 +1,159 @@
+/* --- Global Navbar Styles --- */
+.navbar {
+  background: transparent;
+  height: var(--navbar-height); /* Defined in index.css (e.g., 80px) */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.1rem;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+  background: var(--color-dark-bg);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1300px;
+  padding: 0 24px;
+}
+
+.navbar-logo {
+  color: var(--color-text-light);
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.logo-img {
+  height: 45px;
+  margin-right: 12px;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* ALIGNMENT FIX: This ensures both text links and buttons are centered vertically */
+.nav-item {
+  height: var(--navbar-height);
+  display: flex;
+  align-items: center;
+}
+
+.nav-links {
+  color: var(--color-text-light);
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 0 1.2rem;
+  height: 100%;
+  cursor: pointer;
+  font-weight: 500;
+  transition: color 0.2s ease-out;
+}
+
+.nav-links:hover {
+  color: var(--color-primary); /* Teal hover */
+}
+
+/* Button Styling */
+.nav-links-btn {
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+  padding: 10px 24px;
+  border-radius: 4px;
+  text-decoration: none;
+  margin-left: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.nav-links-btn:hover {
+  background-color: var(--color-secondary); /* Rust hover */
+  transform: translateY(-2px);
+}
+
+.menu-icon {
+  display: none; /* Hidden on desktop */
+}
+
+/* --- Mobile / Tablet Responsiveness (Max width 960px) --- */
+@media screen and (max-width: 960px) {
+  .navbar-container {
+    padding: 0 20px;
+  }
+
+  .menu-icon {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-100%, 60%);
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: white;
+  }
+
+  .nav-menu {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 90vh; /* Covers most of the screen */
+    position: absolute;
+    top: var(--navbar-height);
+    left: -100%; /* Hidden off-screen by default */
+    opacity: 1;
+    transition: all 0.5s ease;
+    background: var(--color-dark-bg);
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .nav-menu.active {
+    left: 0; /* Slides in */
+    opacity: 1;
+    z-index: 999;
+  }
+
+  .nav-item {
+    height: 80px;
+    width: 100%;
+    justify-content: center; /* Center horizontally on mobile */
+  }
+
+  .nav-links {
+    text-align: center;
+    padding: 2rem;
+    width: 100%;
+    display: table;
+  }
+
+  .nav-links:hover {
+    background-color: rgba(255,255,255,0.05);
+  }
+
+  .nav-links-btn {
+    width: 80%;
+    text-align: center;
+    margin: 1.5rem 0;
+    padding: 14px;
+    display: block;
+  }
+}
