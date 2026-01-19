@@ -1,0 +1,193 @@
+/* --- Container --- */
+.why-section {
+  background-color: #0a192f; /* Deep Navy Background */
+  color: white;
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.why-header {
+  text-align: center;
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 80px;
+  color: white;
+  font-family: 'Segoe UI', sans-serif;
+  font-weight: 800;
+  /* Optional: A subtle glow */
+  text-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+}
+
+.why-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 100px; /* Space between sections */
+}
+
+/* --- Row Layout (The Alternating Logic) --- */
+.why-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+/* This class flips the order for "Bankers" and "Governments" */
+.why-row.reverse {
+  flex-direction: row-reverse;
+}
+
+/* --- Columns --- */
+.why-image-col {
+  flex: 1;
+  width: 100%;
+}
+
+.why-text-col {
+  flex: 1;
+}
+
+/* Image Styling */
+.image-wrapper {
+  width: 100%;
+  height: 450px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+  position: relative;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.why-row:hover .image-wrapper img {
+  transform: scale(1.05); /* Zoom effect on hover */
+}
+
+/* Text Styling */
+.why-title {
+  font-size: 2.5rem;
+  color: #38bdf8; /* Bright Blue/Teal Highlight */
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.why-subtitle {
+  font-size: 1.1rem;
+  color: #94a3b8; /* Muted Grey */
+  margin-bottom: 30px;
+  font-style: italic;
+  border-left: 3px solid #38bdf8;
+  padding-left: 15px;
+}
+
+/* Points Grid */
+.why-points {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.point-item {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 20px;
+  border-radius: 10px;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background 0.3s;
+}
+
+.point-item:hover {
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.point-head {
+  font-size: 1.2rem;
+  color: #e2e8f0; /* Off-white */
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.point-text {
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+
+/* --- The Solution Conclusion Card --- */
+.why-solution-card {
+  margin-top: 50px;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  border: 1px solid #38bdf8;
+  padding: 60px;
+  border-radius: 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 50px rgba(56, 189, 248, 0.1);
+}
+
+.solution-content h2 {
+  font-size: 2.8rem;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.solution-content p {
+  font-size: 1.3rem;
+  line-height: 1.8;
+  max-width: 900px;
+  margin: 0 auto;
+  color: #e2e8f0;
+}
+
+.solution-content span {
+  color: #38bdf8; /* Highlight key words */
+  font-weight: bold;
+}
+
+/* --- Mobile Responsiveness --- */
+@media screen and (max-width: 960px) {
+  .why-row {
+    flex-direction: column; /* Stack vertically on mobile */
+    gap: 40px;
+  }
+  
+  /* Even the reversed ones should stack normally (Image top, Text bottom) */
+  .why-row.reverse {
+    flex-direction: column; 
+  }
+
+  .image-wrapper {
+    height: 300px;
+  }
+
+  .why-title {
+    font-size: 2rem;
+  }
+
+  .why-header {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+  }
+
+  .why-solution-card {
+    padding: 30px;
+  }
+
+  .solution-content h2 {
+    font-size: 2rem;
+  }
+
+  .solution-content p {
+    font-size: 1rem;
+  }
+}
