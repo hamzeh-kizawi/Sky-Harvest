@@ -351,7 +351,7 @@
   cursor: pointer;
   transition: all 0.3s;
   position: relative;
-  bottom: 140px; /* RAISED AS REQUESTED */
+  bottom: 150px; /* RAISED AS REQUESTED */
 }
 
 #prev:hover, #next:hover {
